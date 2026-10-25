@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Repair Rico · Famille Rivera</title>
+<meta name="description" content="Dossier de présentation : les backgrounds de Camila « Dos » Rivera et de Rico Rivera, et l'histoire du garage Repair Rico à Cayo Perico.">
+<meta name="theme-color" content="#03060c">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{
+  --bg:#03060c; --ink:#f3f6fb; --mute:#93a3bd; --faint:#5f6f8a;
+  --line:rgba(140,175,235,.16); --line-2:rgba(140,175,235,.32);
+  --blue:#4c8dff; --glow:#9ccaff; --card:rgba(10,20,40,.55); --amber:#ffc979;
+  --pad:clamp(20px,5vw,72px); --max:1180px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-weight:300;line-height:1.65;font-size:1.0625rem;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;position:relative;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 88% 0%, rgba(76,141,255,.20), transparent 70%),
+    radial-gradient(50% 45% at 0% 60%, rgba(40,90,200,.14), transparent 70%),
+    radial-gradient(70% 50% at 50% 115%, rgba(76,141,255,.16), transparent 70%),
+    var(--bg);
+}
+.cursor-glow{
+  position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;z-index:-1;pointer-events:none;
+  background:radial-gradient(circle,rgba(110,170,255,.13),transparent 65%);
+  transform:translate(var(--mx,50vw),var(--my,30vh));transition:transform .35s ease-out;
+}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--glow);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:calc(var(--max) + var(--pad)*2);margin:0 auto;padding-inline:var(--pad)}
+ul,ol{list-style:none}
+
+/* ---------- NAV / TABS ---------- */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+  gap:16px;flex-wrap:wrap;padding:16px var(--pad);transition:background .3s,border-color .3s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{background:rgba(3,6,12,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:500;letter-spacing:.14em;text-transform:uppercase;font-size:.85rem}
+.brand .ast{color:var(--glow);font-size:1.2rem;line-height:1}
+.tabs{display:flex;align-items:center;gap:clamp(6px,1.6vw,14px)}
+.tabs a{
+  text-decoration:none;color:var(--mute);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;
+  padding:.55em 1.2em;border:1px solid transparent;border-radius:999px;transition:color .2s,background .2s,border-color .2s;
+}
+.tabs a:hover{color:var(--ink);border-color:var(--line)}
+.tabs a[aria-selected="true"]{color:var(--ink);border-color:var(--line-2);background:rgba(76,141,255,.2);box-shadow:0 0 22px rgba(76,141,255,.22)}
+
+/* ---------- PILL ---------- */
+.pill{
+  display:inline-flex;align-items:center;gap:.7em;padding:.8em 1.6em;border:1px solid var(--line-2);border-radius:999px;
+  background:rgba(76,141,255,.14);color:var(--ink);text-decoration:none;font-size:.82rem;font-weight:400;
+  letter-spacing:.12em;text-transform:uppercase;transition:background .25s,border-color .25s,transform .25s;
+}
+.pill:hover{background:rgba(76,141,255,.34);border-color:var(--glow);transform:translateY(-2px)}
+
+/* ---------- TYPE ---------- */
+.thin{font-weight:200}
+.h{font-weight:500;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.5rem,3.4vw,2.5rem);line-height:1.1;margin-bottom:clamp(20px,3vw,36px)}
+.h .thin{color:rgba(243,246,251,.82)}
+.label{font-size:.78rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);margin-bottom:16px}
+.eyebrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mute);margin-bottom:20px}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:rgba(243,246,251,.88);max-width:62ch}
+.lead + .lead{margin-top:1em}
+.ast{color:var(--glow)}
+.ast.big{font-size:3rem;display:block;line-height:1;margin-bottom:12px}
+h4{font-weight:500}
+p{color:var(--mute)}
+blockquote{margin-top:24px;padding-left:20px;border-left:2px solid var(--blue);font-size:1.15rem;font-weight:300;font-style:italic;color:var(--ink)}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;padding:136px var(--pad) clamp(40px,6vw,72px);display:flex;flex-direction:column;gap:clamp(32px,5vw,56px);max-width:calc(var(--max) + var(--pad)*2);margin:0 auto}
+.hero-lines{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-lines::before,.hero-lines::after{content:"";position:absolute;background:var(--line)}
+.hero-lines::before{left:78%;top:0;bottom:0;width:1px}
+.hero-lines::after{top:42%;left:0;right:0;height:1px}
+.hero-eyebrow{position:relative;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--glow);margin-bottom:-12px}
+.hero-title{position:relative;font-weight:300;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(2.6rem,9vw,7.2rem);line-height:1.02}
+.hero-title .row{display:flex;flex-wrap:wrap;column-gap:.5em}
+.hero-title .r2{padding-left:clamp(0px,14vw,210px)}
+.hero-title .thin{color:rgba(243,246,251,.78)}
+
+.slide{
+  position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  padding:clamp(24px,4vw,56px);margin-top:clamp(20px,3vw,32px);
+  background:
+    radial-gradient(120% 90% at 85% 115%, rgba(76,141,255,.26), transparent 60%),
+    linear-gradient(160deg, rgba(14,28,56,.72), rgba(4,8,16,.9));
+}
+.slide::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 42%,rgba(160,200,255,.06) 50%,transparent 58%)}
+.slide > *{position:relative;z-index:1}
+
+.deck{margin-top:0;padding:clamp(20px,3vw,40px)}
+.deck-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:clamp(20px,3vw,36px)}
+.deck-body{display:grid;grid-template-columns:1fr minmax(180px,.9fr) 1fr;gap:clamp(20px,3vw,48px);align-items:center}
+.deck-names p{margin-bottom:28px;color:var(--ink)}
+.deck-names strong{display:block;font-weight:400;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.8rem,4vw,3.2rem);line-height:1}
+.deck-names span{display:block;font-weight:200;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(1.3rem,3vw,2.3rem);line-height:1.15;color:rgba(243,246,251,.8)}
+.deck-names em{display:block;margin-top:8px;font-style:normal;font-size:.78rem;color:var(--mute);letter-spacing:.1em}
+.deck-side .ast{font-size:1.6rem;display:block;margin-bottom:10px}
+.deck-side p{font-size:.92rem;max-width:30ch}
+.stat{font-weight:300;font-size:clamp(2.8rem,6vw,4.6rem);line-height:1;color:var(--ink);letter-spacing:-.01em}
+.deck-side .stat{margin-top:22px}
+.deck-side small,.stat-item small{display:block;color:var(--mute);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-top:6px}
+
+.orb{position:relative;aspect-ratio:1;width:min(100%,300px);margin:auto}
+.orb i{position:absolute;inset:0;border-radius:50%;border:1px solid var(--line-2)}
+.orb i:nth-child(2){inset:13%}
+.orb i:nth-child(3){inset:27%;border-color:rgba(156,202,255,.5)}
+.orb b{position:absolute;inset:4%;border-radius:50%;background:conic-gradient(from 0deg,transparent 0,rgba(156,202,255,.65) 14%,transparent 32%);
+  -webkit-mask:radial-gradient(circle,transparent 66%,#000 67%,#000 69%,transparent 70%);mask:radial-gradient(circle,transparent 66%,#000 67%,#000 69%,transparent 70%);animation:spin 12s linear infinite}
+.orb::before{content:"";position:absolute;inset:34%;border-radius:50%;background:radial-gradient(circle,#fff 0,var(--glow) 16%,rgba(76,141,255,.6) 42%,transparent 72%);filter:blur(5px);animation:pulse 5s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pulse{50%{transform:scale(1.18);opacity:.8}}
+
+/* ---------- PANELS ---------- */
+.stage{scroll-margin-top:80px}
+.panel{outline:none;padding-block:clamp(24px,4vw,56px) clamp(72px,10vw,130px)}
+.sec-head{display:flex;align-items:baseline;gap:18px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.sec-num{font-weight:200;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1;color:var(--glow)}
+.sec-label{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:var(--mute)}
+
+.cover{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,4vw,64px);align-items:center;min-height:clamp(420px,56vw,560px)}
+.flip .cover{grid-template-columns:.85fr 1.15fr}
+.flip .cover .cover-main{order:2}
+.name{font-weight:300;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(2.8rem,8vw,6.2rem);line-height:1;display:flex;flex-direction:column}
+.name .thin{color:rgba(243,246,251,.78);font-size:.7em}
+.tagline{margin-top:22px;font-size:clamp(1.1rem,1.8vw,1.3rem);color:var(--ink);max-width:34ch;font-weight:300}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.tags li{padding:.4em 1em;border:1px solid var(--line-2);border-radius:999px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);background:rgba(76,141,255,.1)}
+.cover .pill{margin-top:28px}
+.slide > .mono{position:absolute;right:-2%;bottom:-16%;z-index:0;font-weight:200;font-size:clamp(16rem,38vw,32rem);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(140,175,235,.16);pointer-events:none;user-select:none}
+.flip .slide > .mono{right:auto;left:-2%}
+.repair-cover > .mono{font-size:clamp(14rem,32vw,26rem);bottom:-10%}
+.facts{display:grid;gap:0}
+.facts div{display:grid;grid-template-columns:7.5rem 1fr;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts div:first-child{border-top:1px solid var(--line)}
+.facts dt{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);padding-top:.3em}
+.facts dd{color:var(--ink);font-size:.98rem}
+
+.split{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(24px,4vw,64px);align-items:start}
+.note{display:flex;flex-direction:column;gap:14px;padding:clamp(20px,3vw,32px);border:1px solid var(--line);border-radius:16px;background:rgba(76,141,255,.07)}
+.note .ast{font-size:1.5rem}
+.note p{color:var(--ink);font-size:1.05rem}
+.dots li{position:relative;padding-left:1.4em;margin-bottom:.7em;color:rgba(243,246,251,.86)}
+.dots li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:6px;border-radius:50%;background:var(--blue);box-shadow:0 0 10px var(--blue)}
+.plus li,.minus li{position:relative;padding-left:1.5em;margin-bottom:.7em;color:rgba(243,246,251,.86)}
+.plus li::before{content:"+";position:absolute;left:0;color:var(--glow);font-weight:500}
+.minus li::before{content:"–";position:absolute;left:0;color:#ff9aa8;font-weight:500}
+
+.block{margin-top:clamp(56px,8vw,96px)}
+.card{padding:clamp(20px,2.6vw,30px);border:1px solid var(--line);border-radius:16px;background:var(--card);transition:border-color .3s,transform .3s,background .3s}
+.card:hover{border-color:var(--line-2);transform:translateY(-3px);background:rgba(14,28,56,.7)}
+.card h4{font-size:1.15rem;margin-bottom:6px}
+.card .label{margin-bottom:14px}
+.card p{font-size:.95rem}
+.card .ast{font-size:1.2rem;display:block;margin-bottom:12px}
+
+/* secrets (staff) */
+.badge{display:inline-block;margin-left:.4em;padding:.05em .65em;border:1px solid rgba(255,201,121,.5);border-radius:999px;font-size:.62rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);vertical-align:middle;white-space:nowrap}
+li.secret{color:#ffdca8 !important}
+.dots li.secret::before{background:var(--amber);box-shadow:0 0 10px var(--amber)}
+.minus li.secret::before{color:var(--amber)}
+.card.secret{border-color:rgba(255,201,121,.32);background:rgba(58,38,8,.28)}
+.card.secret:hover{border-color:rgba(255,201,121,.6);background:rgba(70,46,10,.4)}
+.card.secret .ast{color:var(--amber)}
+.card.secret .label{color:var(--amber)}
+.secret-slide{border-color:rgba(255,201,121,.3);background:
+  radial-gradient(120% 90% at 85% 115%, rgba(255,170,60,.16), transparent 60%),
+  linear-gradient(160deg, rgba(36,24,8,.7), rgba(8,6,4,.92))}
+.staff-tag{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:18px}
+.secret-slide .lead + .traits{margin-top:28px}
+
+.timeline{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,2vw,28px);position:relative}
+.timeline.t3{grid-template-columns:repeat(3,1fr)}
+.timeline::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:var(--line-2)}
+.timeline li{position:relative;padding-top:34px}
+.timeline li::before{content:"";position:absolute;left:0;top:0;width:15px;height:15px;border-radius:50%;background:var(--bg);border:2px solid var(--glow);box-shadow:0 0 14px rgba(156,202,255,.6)}
+.t-age{display:block;font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--glow);margin-bottom:6px}
+.timeline h4{font-size:1.2rem;margin-bottom:6px}
+.timeline p{font-size:.93rem}
+
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px) clamp(28px,4vw,64px)}
+.story .h{font-size:clamp(1.25rem,2.4vw,1.7rem);margin-bottom:14px}
+.story p{max-width:56ch}
+
+.traits{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
+.traits.four{grid-template-columns:repeat(4,1fr)}
+.traits.two{grid-template-columns:repeat(2,1fr)}
+.duo{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,20px)}
+.duo.two{grid-template-columns:repeat(2,1fr)}
+.habits{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:clamp(12px,1.6vw,20px)}
+.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,20px)}
+
+.stats{display:grid;gap:clamp(18px,3vw,34px)}
+.stat-item{padding:18px 0;border-bottom:1px solid var(--line)}
+.stat-item:first-child{border-top:1px solid var(--line)}
+
+.next{margin-top:clamp(40px,6vw,72px);display:flex;justify-content:flex-end}
+.cta{text-align:center;margin-top:clamp(56px,8vw,96px);padding-block:clamp(48px,7vw,88px)}
+.cta .h{font-size:clamp(2rem,6vw,4.2rem);font-weight:300;margin-bottom:12px}
+.cta .lead{margin:0 auto 28px}
+.cta-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+footer{border-top:1px solid var(--line);padding:32px var(--pad);text-align:center;color:var(--faint);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
+
+/* ---------- REVEAL ---------- */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+.js .reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .deck-body{grid-template-columns:1fr 1fr}
+  .deck-body .orb{display:none}
+  .traits,.duo,.goals,.traits.four{grid-template-columns:repeat(2,1fr)}
+  .timeline,.timeline.t3{grid-template-columns:1fr;padding-left:30px}
+  .timeline::before{left:7px;right:auto;top:0;bottom:0;width:1px;height:auto}
+  .timeline li{padding:0 0 22px 0}
+  .timeline li::before{left:-30px;top:4px}
+}
+@media (max-width:760px){
+  .cover,.flip .cover,.split,.story{grid-template-columns:1fr}
+  .flip .cover .cover-main{order:0}
+  .deck-body{grid-template-columns:1fr}
+  .traits,.duo,.duo.two,.goals,.traits.four,.traits.two{grid-template-columns:1fr}
+  .hero-title .r2{padding-left:0}
+  .facts div{grid-template-columns:6rem 1fr}
+  .hero-lines::before{left:90%}
+}
+@media (max-width:560px){
+  .nav{padding-block:12px;justify-content:center}
+  .brand{width:100%;justify-content:center;font-size:.78rem}
+  .tabs{width:100%;justify-content:space-between}
+  .tabs a{padding:.5em .8em;font-size:.72rem;letter-spacing:.08em}
+  .hero{padding-top:140px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none !important;transition:none !important}
+  .js .reveal{opacity:1;transform:none}
+  .cursor-glow{display:none}
+}
+</style>
+</head>
+<body>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Navigation principale">
+  <a class="brand" href="#top"><span class="ast" aria-hidden="true">✱</span>Repair Rico</a>
+  <div class="tabs" role="tablist" aria-label="Sections du dossier">
+    <a role="tab" id="tab-camila" href="#camila" data-tab="camila" aria-controls="camila" aria-selected="true">Camila</a>
+    <a role="tab" id="tab-rico" href="#rico" data-tab="rico" aria-controls="rico" aria-selected="false" tabindex="-1">Rico</a>
+    <a role="tab" id="tab-repair" href="#repair" data-tab="repair" aria-controls="repair" aria-selected="false" tabindex="-1">Repair Rico</a>
+  </div>
+</nav>
+
+<main>
+<header class="hero" id="top">
+  <div class="hero-lines" aria-hidden="true"></div>
+  <p class="hero-eyebrow">Dossier personnages · Présentation au staff</p>
+  <h1 class="hero-title">
+    <span class="row"><span>Famille</span><span class="thin">Rivera</span></span>
+    <span class="row r2"><span class="thin">Repair</span><span>Rico</span></span>
+  </h1>
+  <div class="slide deck reveal">
+    <div class="deck-top"><span>Cayo Perico</span><span>Los Santos ➜ Cayo Perico</span><span>Fiches RP</span></div>
+    <div class="deck-body">
+      <div class="deck-names">
+        <p><strong>Camila</strong><span>« Dos » Rivera</span><em>Co-gérante · 24 ans</em></p>
+        <p><strong>Rico</strong><span>Rivera</span><em>Gérant · 29 ans</em></p>
+      </div>
+      <div class="orb" aria-hidden="true"><i></i><i></i><i></i><b></b></div>
+      <div class="deck-side">
+        <span class="ast" aria-hidden="true">✱</span>
+        <p>Un garage, deux Rivera et l'héritage de leur père, au bout d'une île.</p>
+        <div class="stat">6h<small>Le rideau se lève</small></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="stage" id="stage">
+<section class="char panel" id="camila" role="tabpanel" aria-labelledby="tab-camila" tabindex="-1">
+<div class="wrap">
+<div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-label">Présentation</span></div>
+
+<div class="slide cover reveal">
+  <div class="mono" aria-hidden="true">C</div>
+  <div class="cover-main">
+    <p class="eyebrow">Fiche personnage · Los Santos ➜ Cayo Perico</p>
+    <h2 class="name"><span>Camila</span><span class="thin">« Dos » Rivera</span></h2>
+    <p class="tagline">Elle ne sait pas changer une roue. Mais pour sa famille, elle a tout lâché.</p>
+    <ul class="tags"><li>24 ans</li><li>Ex étudiante en psychologie</li><li>Co-gérante de Repair Rico</li></ul>
+  </div>
+  <dl class="facts"><div><dt>Nom</dt><dd>Camila Rivera, dite « Dos »</dd></div><div><dt>Âge</dt><dd>24 ans</dd></div><div><dt>Origines</dt><dd>Latino, d'origine colombienne, née à Los Santos</dd></div><div><dt>Langues</dt><dd>Espagnol à la maison, anglais au quotidien</dd></div><div><dt>Situation</dt><dd>Célibataire</dd></div><div><dt>Métier</dt><dd>Ex étudiante en psycho, co-gérante du garage</dd></div><div><dt>Logement</dt><dd>Chambre au-dessus du garage, à Cayo Perico</dd></div></dl>
+</div>
+
+<div class="slide split reveal">
+  <div><h3 class="h">Apparence</h3><ul class="dots"><li>1m60, corpulence moyenne, longs cheveux bruns, yeux bleus et taches de rousseur sur une peau mate</li><li>Style coloré, vintage et streetwear : vestes oversize, baskets voyantes, sac à dos d'étudiante qu'elle n'a jamais lâché</li><li>Le bandana de son père dans la poche arrière : jamais porté, toujours là</li><li>Voix douce, regard direct, demi-sourire sarcastique. Son accent change selon la personne en face</li></ul></div>
+  <aside class="note"><span class="ast" aria-hidden="true">✱</span><p>« Dos » : « deux » en espagnol. Son père l'appelait sa deuxième merveille, après Rico.</p></aside>
+</div>
+
+<div class="block reveal">
+  <h3 class="h">Sa vie <span class="thin">en cinq dates</span></h3>
+  <ol class="timeline"><li><span class="t-age">0 an</span><h4>Naissance</h4><p>À Los Santos. Elle ne connaîtra jamais sa mère.</p></li><li><span class="t-age">8 ans</span><h4>Le garage</h4><p>Grandit entre son père mécanicien et Rico, dans un quartier latino.</p></li><li><span class="t-age">18 ans</span><h4>La fac</h4><p>Première Rivera à entrer à l'université, en psychologie.</p></li><li><span class="t-age">19 ans</span><h4>La séparation</h4><p>Son père et Rico partent ouvrir Repair Rico à Cayo Perico. Elle reste.</p></li><li><span class="t-age">24 ans</span><h4>Le choc</h4><p>Son père décède. Elle quitte tout pour rejoindre son frère.</p></li></ol>
+</div>
+<div class="block"><div class="story"><article class="reveal"><h3 class="h">Une famille <span class="thin">sans mère</span></h3><p>Camila n'a jamais connu sa mère. Sa famille, c'est Héctor, son père, mécanicien colombien installé à Los Santos, et Rico, son grand frère. Une maison bruyante et soudée, où l'on mange ensemble le dimanche, où l'on se dispute fort et où l'on se réconcilie aussi vite.</p></article><article class="reveal"><h3 class="h">La seule Rivera <span class="thin">sans cambouis</span></h3><p>Elle traîne à l'atelier parce que sa famille y vit, mais les moteurs ne l'intéressent pas. Elle observe les clients plutôt que les voitures : leurs manies, leurs mensonges. Elle compense en écoutant et en devinant les gens.</p></article><article class="reveal"><h3 class="h">La fac et <span class="thin">la vie seule</span></h3><p>À 18 ans, Camila entre en psychologie. Son père en parle à tous ses clients. Un an plus tard, Héctor réalise son rêve : ouvrir son propre garage. Il part avec Rico à Cayo Perico et baptise l'affaire Repair Rico, du nom de son fils. Camila reste à Los Santos : petit appartement, cours, jobs étudiants, amis de fac. Elle ne va sur l'île que deux ou trois fois, quelques jours à peine. Mais avec Rico, le lien ne casse jamais : messages vocaux tous les jours, appels le dimanche avec leur père.</p></article><article class="reveal"><h3 class="h">Pourquoi la <span class="thin">psychologie ?</span></h3><p>Parce qu'elle s'est toujours sentie à part. Comprendre l'esprit humain, c'était sa façon de comprendre pourquoi elle ne rentrait dans aucune case.</p></article></div></div>
+
+<div class="slide split cap reveal">
+  <div><h3 class="h">Cap sur <span class="thin">Cayo Perico</span></h3><p class="lead">Quand Héctor décède, Rico se retrouve seul avec un garage criblé de dettes. Camila n'hésite pas longtemps : elle abandonne ses études en cours d'année, rend son appartement et prend le premier bateau pour l'île. Elle ne connaît rien à la mécanique. Mais elle sait parler aux gens, négocier et repérer un arnaqueur. Et surtout, la famille passe avant tout.</p><blockquote>« Je le fais pour Rico. Et pour papá. Le reste, je verrai bien. »</blockquote></div>
+  <div class="chill"><h4 class="label">Ce qui la refroidit</h4><ul class="dots"><li>Elle ne connaît presque pas l'île, ni ses rues, ni ses codes</li><li>Les habitués du garage ne la connaissent pas et la voient comme « la petite de la ville »</li><li>Elle a entendu des histoires sur Cayo Perico : trafics, gens qui disparaissent, police qui ferme les yeux</li></ul></div>
+</div>
+<div class="block"><h3 class="h">Son <span class="thin">caractère</span></h3><ul class="traits"><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Franche</h4><p>Dit ce qu'elle pense, sans filtre et sans tact. Blesse parfois sans le vouloir.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Curieuse</h4><p>Pose trop de questions et analyse tout le monde à voix haute.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Sûre d'elle</h4><p>Parle avec aplomb, même quand elle ne sait pas de quoi elle parle.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Têtue</h4><p>Une fois décidée, impossible de la faire changer d'avis.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Susceptible</h4><p>Une remarque sur la mécanique ou ses études, et elle se braque.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Rancunière</h4><p>N'oublie rien. Qui touche à sa famille finit sur sa liste noire.</p></li></ul></div>
+
+<div class="block reveal">
+  <h3 class="h">Forces et <span class="thin">faiblesses</span></h3>
+  <div class="duo">
+    <div class="card"><h4 class="label">Forces</h4><ul class="plus"><li>Lit les gens en quelques secondes : menteurs, nerveux, arnaqueurs</li><li>Négociatrice redoutable avec les clients et les fournisseurs</li><li>Loyauté absolue envers sa famille</li><li>Courageuse, n'a peur de tenir tête à personne</li><li>Bilingue, passe de l'espagnol à l'anglais selon son public</li></ul></div>
+    <div class="card"><h4 class="label">Faiblesses</h4><ul class="minus"><li>Ne connaît rien à la mécanique et refuse de l'avouer</li><li>Manque de tact, se fait facilement des ennemis</li><li>Trop fière pour demander de l'aide</li><li>Ne connaît ni l'île ni ses habitants</li></ul></div>
+    <div class="card"><h4 class="label">Ses peurs</h4><ul class="dots"><li>Perdre le garage, dernier souvenir de son père</li><li>Perdre Rico, la seule famille qu'il lui reste</li><li>Que l'île soit aussi dangereuse qu'on le dit</li><li>Ne jamais reprendre ses études</li><li>Une panne de courant au pire moment</li></ul></div>
+  </div>
+</div>
+<div class="block"><h3 class="h">Ses habitudes <span class="thin">à jouer en RP</span></h3><ul class="habits"><li class="card reveal"><h4>Salue en espagnol</h4><p>« ¡Buenos días! » à chaque client, même ceux qui ne comprennent pas.</p></li><li class="card reveal"><h4>Analyse à voix haute</h4><p>« Toi, t'es nerveux. Tu caches quoi ? »</p></li><li class="card reveal"><h4>Mots de mécano de travers</h4><p>Répète les termes de Rico en les écorchant, avec aplomb.</p></li><li class="card reveal"><h4>Le bandana</h4><p>Le touche dans sa poche dès qu'elle est stressée.</p></li><li class="card reveal"><h4>Ruban adhésif</h4><p>Sur la caméra de son ordi et de son téléphone.</p></li><li class="card reveal"><h4>Démonte tout</h4><p>Stylos, briquets, télécommandes. Ne remonte jamais rien.</p></li><li class="card reveal"><h4>Jure en espagnol</h4><p>« ¡Qué carajo! » quand quelque chose l'énerve.</p></li><li class="card reveal"><h4>Musique à fond</h4><p>Reggaeton et salsa dans l'atelier, au grand dam de Rico.</p></li></ul></div>
+<div class="block reveal"><h3 class="h">Ses <span class="thin">objectifs</span></h3><div class="goals"><div class="card"><h4 class="label">Personnel · court terme</h4><ul class="dots"><li>Trouver sa place sur l'île et comprendre ses codes</li><li>Gagner la confiance des habitués du garage</li></ul></div><div class="card"><h4 class="label">Personnel · long terme</h4><ul class="dots"><li>Reprendre ses études, à distance s'il le faut</li><li>Devenir psychologue</li><li>Se construire une vraie vie à Cayo Perico</li></ul></div><div class="card"><h4 class="label">Garage · court terme</h4><ul class="dots"><li>Remettre les comptes à flot avec Rico</li><li>Fidéliser la clientèle, gérer l'accueil et les devis</li><li>Faire connaître Repair Rico sur l'île</li></ul></div><div class="card"><h4 class="label">Garage · long terme</h4><ul class="dots"><li>Faire du garage la référence de la custom sur l'île</li><li>Ouvrir un espace dédié à la personnalisation</li><li>Que Repair Rico rende leur père fier</li></ul></div></div></div>
+
+
+<div class="slide split reveal">
+  <div><h3 class="h">Pour la <span class="thin">jouer</span></h3>
+    <h4 class="label">Accroches RP</h4><ul class="dots"><li>Cherche quelqu'un pour lui faire découvrir l'île et ses codes</li><li>Cherche un mécanicien ou un apprenti pour aider Rico</li><li>A encore des amis et des contacts à Los Santos</li><li>Peut transmettre des messages entre Los Santos et Cayo Perico</li><li>Partante pour tout projet de custom, si quelqu'un d'autre fait la mécanique</li></ul></div>
+  <div><h4 class="label">Conseils de jeu</h4><ul class="dots"><li>Toujours répondre avec assurance, même sans savoir</li><li>Mélanger anglais et espagnol, surtout sous le coup de l'émotion</li><li>Méfiante envers l'île, mais jamais au point de reculer</li><li>Vexée au moindre mot sur la mécanique ou ses études</li></ul></div>
+</div>
+<div class="next reveal"><a class="pill" href="#rico" data-tab="rico">Rico <span aria-hidden="true">→</span></a></div>
+</div></section>
+<section class="char flip panel" id="rico" role="tabpanel" aria-labelledby="tab-rico" tabindex="-1">
+<div class="wrap">
+<div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-label">Présentation</span></div>
+
+<div class="slide cover reveal">
+  <div class="mono" aria-hidden="true">R</div>
+  <div class="cover-main">
+    <p class="eyebrow">Fiche personnage · Cayo Perico</p>
+    <h2 class="name"><span>Rico</span><span class="thin">Rivera</span></h2>
+    <p class="tagline">Il parle peu, répare tout, et porte seul le poids de l'héritage de son père.</p>
+    <ul class="tags"><li>29 ans</li><li>Mécanicien</li><li>Gérant de Repair Rico</li></ul>
+  </div>
+  <dl class="facts"><div><dt>Nom</dt><dd>Rico Rivera</dd></div><div><dt>Âge</dt><dd>29 ans</dd></div><div><dt>Origines</dt><dd>Latino, d'origine colombienne, né à Los Santos</dd></div><div><dt>Langues</dt><dd>Espagnol d'abord, anglais avec un accent marqué</dd></div><div><dt>Situation</dt><dd>Célibataire, marié au garage</dd></div><div><dt>Métier</dt><dd>Mécanicien, gérant de Repair Rico</dd></div><div><dt>Logement</dt><dd>L'appartement au-dessus du garage, à Cayo Perico</dd></div></dl>
+</div>
+
+<div class="slide split reveal">
+  <div><h3 class="h">Apparence</h3><ul class="dots"><li>1m80, carrure solide, peau mate, cheveux noirs courts, barbe de quelques jours, yeux marron foncé</li><li>Combinaison de travail ou débardeur taché de cambouis, mains abîmées, ongles jamais vraiment propres</li><li>Une chaîne en or avec la médaille de son père, qu'il ne quitte jamais</li><li>Démarche lente et posée, regard méfiant. Il parle peu, mais quand il parle, on écoute</li></ul></div>
+  <aside class="note"><span class="ast" aria-hidden="true">✱</span><p>Le garage porte son prénom : son père voulait que tout le monde sache qu'un jour, l'affaire serait à lui.</p></aside>
+</div>
+
+<div class="block reveal">
+  <h3 class="h">Sa vie <span class="thin">en cinq dates</span></h3>
+  <ol class="timeline"><li><span class="t-age">0 an</span><h4>Naissance</h4><p>À Los Santos, aîné des Rivera. Il ne connaîtra pas sa mère.</p></li><li><span class="t-age">16 ans</span><h4>L'atelier</h4><p>Quitte l'école pour travailler à plein temps avec son père.</p></li><li><span class="t-age">24 ans</span><h4>L'île</h4><p>Part avec son père ouvrir Repair Rico à Cayo Perico.</p></li><li><span class="t-age">29 ans</span><h4>Le deuil</h4><p>Son père décède. Il découvre des dettes énormes.</p></li><li><span class="t-age">Aujourd'hui</span><h4>Le renfort</h4><p>Camila débarque sur l'île pour l'aider à sauver le garage.</p></li></ol>
+</div>
+<div class="block"><div class="story"><article class="reveal"><h3 class="h">Le grand frère <span class="thin">avant tout</span></h3><p>Sans mère, avec un père qui finit tard, Rico grandit vite. C'est lui qui emmène Camila à l'école, prépare les repas, règle les problèmes avant qu'ils n'arrivent à la maison. Il devient son protecteur bien avant d'avoir l'âge de l'être.</p></article><article class="reveal"><h3 class="h">Les mains <span class="thin">dans le moteur</span></h3><p>Là où Camila est bavarde et curieuse, Rico est discret et manuel. À 16 ans, il quitte l'école pour l'atelier. Héctor lui apprend tout : diagnostiquer un moteur à l'oreille, réparer avec trois fois rien, ne jamais laisser un client repartir mécontent.</p></article><article class="reveal"><h3 class="h">Repair Rico, <span class="thin">le rêve de son père</span></h3><p>À 24 ans, Rico suit son père à Cayo Perico pour ouvrir enfin leur propre garage. Ils le construisent à deux, à la sueur de leur front, et se font une place parmi les habitants de l'île. Rico connaît vite tout le monde, et tout le monde le connaît. Pendant ce temps, Camila étudie à Los Santos. Il est fier d'elle sans jamais le dire. Il lui envoie des vocaux tous les jours.</p></article><article class="reveal"><h3 class="h">Pourquoi la <span class="thin">mécanique ?</span></h3><p>Parce que c'était le langage de son père. Un moteur, c'est plus simple qu'un être humain : quand quelque chose ne va pas, on cherche, on trouve, on répare.</p></article></div></div>
+
+<div class="slide split cap reveal">
+  <div><h3 class="h">Seul face <span class="thin">aux dettes</span></h3><p class="lead">Quand Héctor décède, Rico découvre l'ampleur des dégâts : fournisseurs impayés, crédits en retard, clients qui doutent qu'il tienne la boutique seul. Trop fier pour appeler à l'aide, il travaille jour et nuit pendant des semaines. Il ne demande rien à Camila. C'est elle qui décide de tout lâcher pour venir. Il en est soulagé, et rongé de culpabilité.</p><blockquote>« Papá a construit ce garage. Je le laisserai pas tomber. »</blockquote></div>
+  <div class="chill"><h4 class="label">Ce qui le ronge</h4><ul class="dots"><li>Avoir fait abandonner ses études à sa sœur</li><li>Voir Camila débarquer sur une île qu'elle ne connaît pas, avec ce qui s'y passe</li></ul></div>
+</div>
+<div class="block"><h3 class="h">Son <span class="thin">caractère</span></h3><ul class="traits"><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Discret</h4><p>Peu de mots, des phrases courtes. Il préfère agir que parler.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Travailleur</h4><p>Premier arrivé au garage, dernier parti.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Protecteur</h4><p>Surprotège Camila, au point de l'étouffer parfois.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Fier</h4><p>N'accepte ni aide ni charité, même quand il en a besoin.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Loyal</h4><p>Sa parole vaut un contrat. Ce qu'il promet, il le fait.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Méfiant</h4><p>Longue à gagner, sa confiance se perd en une seule erreur.</p></li></ul></div>
+
+<div class="block reveal">
+  <h3 class="h">Forces et <span class="thin">faiblesses</span></h3>
+  <div class="duo">
+    <div class="card"><h4 class="label">Forces</h4><ul class="plus"><li>Mécanicien de talent, répare presque n'importe quoi</li><li>Calme sous la pression, garde la tête froide</li><li>Respecté sur l'île pour son sérieux et son honnêteté</li><li>Physiquement solide et endurant</li><li>Connaît tout le monde à Cayo Perico</li></ul></div>
+    <div class="card"><h4 class="label">Faiblesses</h4><ul class="minus"><li>Nul en gestion, en paperasse et en relation client</li><li>Trop fier pour demander de l'aide</li><li>Explose quand on s'en prend à sa famille ou au garage</li><li>Garde tout pour lui, ne parle jamais de son deuil</li><li>A du mal à laisser Camila décider</li></ul></div>
+    <div class="card"><h4 class="label">Ses peurs</h4><ul class="dots"><li>Faire faillite et décevoir la mémoire de son père</li><li>Qu'il arrive quelque chose à Camila sur l'île</li><li>Que Camila regrette d'être venue et lui en veuille</li><li>Être vu comme faible ou incapable</li></ul></div>
+  </div>
+</div>
+<div class="block"><h3 class="h">Ses habitudes <span class="thin">à jouer en RP</span></h3><ul class="habits"><li class="card reveal"><h4>Ouvre à 6h</h4><p>Le rideau du garage se lève toujours à la même heure.</p></li><li class="card reveal"><h4>Le chiffon</h4><p>S'essuie les mains en permanence, même propres.</p></li><li class="card reveal"><h4>La médaille</h4><p>L'embrasse avant chaque grosse réparation.</p></li><li class="card reveal"><h4>Deux tapes</h4><p>Tape deux fois sur le capot d'une voiture réparée, comme son père.</p></li><li class="card reveal"><h4>Mmh</h4><p>Répond par un grognement quand il n'a pas envie de parler.</p></li><li class="card reveal"><h4>Mija, hermanita</h4><p>Les seuls mots doux qu'il s'autorise, pour Camila.</p></li><li class="card reveal"><h4>Cumbia et vieille salsa</h4><p>La musique de son père, pendant qu'il travaille.</p></li><li class="card reveal"><h4>Le repas du dimanche</h4><p>Cuisine les recettes colombiennes de son père.</p></li><li class="card reveal"><h4>La porte</h4><p>Vérifie deux fois la fermeture du garage chaque soir.</p></li><li class="card reveal"><h4>Le foot</h4><p>Regarde les matchs au garage avec les habitués.</p></li></ul></div>
+<div class="block reveal"><h3 class="h">Ses <span class="thin">objectifs</span></h3><div class="goals"><div class="card"><h4 class="label">Personnel · court terme</h4><ul class="dots"><li>Protéger Camila des dangers de l'île</li><li>Tenir le coup, physiquement et moralement</li></ul></div><div class="card"><h4 class="label">Personnel · long terme</h4><ul class="dots"><li>Faire enfin le deuil de son père</li><li>Voir Camila reprendre ses études</li><li>Fonder un jour sa propre famille</li></ul></div><div class="card"><h4 class="label">Garage · court terme</h4><ul class="dots"><li>Éviter la saisie et payer les fournisseurs</li><li>Recruter un apprenti fiable</li><li>Regagner la confiance des clients</li></ul></div><div class="card"><h4 class="label">Garage · long terme</h4><ul class="dots"><li>Racheter les murs du garage</li><li>Agrandir l'atelier</li><li>Transmettre un jour Repair Rico, comme son père l'a fait</li></ul></div></div></div>
+
+
+<div class="slide split reveal">
+  <div><h3 class="h">Pour le <span class="thin">jouer</span></h3>
+    <h4 class="label">Accroches RP</h4><ul class="dots"><li>Recherche un apprenti ou un mécanicien</li><li>Accepte des réparations discrètes quand les fins de mois sont dures</li><li>Connaît tout le monde à Cayo Perico, peut servir d'intermédiaire</li><li>Cherche des fournisseurs de pièces fiables</li></ul></div>
+  <div><h4 class="label">Conseils de jeu</h4><ul class="dots"><li>Peu de mots, beaucoup de gestes</li><li>Méfiant avec les inconnus, chaleureux une fois la confiance gagnée</li><li>Ne parle jamais de son père, sauf seul ou à bout</li><li>Réagit au quart de tour si on menace Camila ou le garage</li></ul></div>
+</div>
+<div class="next reveal"><a class="pill" href="#repair" data-tab="repair">Repair Rico <span aria-hidden="true">→</span></a></div>
+</div></section>
+
+<section class="char repair panel" id="repair" role="tabpanel" aria-labelledby="tab-repair" tabindex="-1">
+<div class="wrap">
+  <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-label">Le garage</span></div>
+
+  <div class="slide cover repair-cover reveal">
+    <div class="mono" aria-hidden="true">✱</div>
+    <div class="cover-main">
+      <p class="eyebrow">Garage · Cayo Perico</p>
+      <h2 class="name"><span>Repair</span><span class="thin">Rico</span></h2>
+      <p class="tagline">Le rêve d'Héctor, bâti à deux sur l'île. Aujourd'hui, c'est tout ce qu'il reste à ses enfants.</p>
+      <a class="pill" href="#plan">Ce qu'on va jouer <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="stats"><div class="stat-item"><div class="stat">6h</div><small>Le rideau se lève</small></div><div class="stat-item"><div class="stat">5 ans</div><small>Sur l'île de Cayo Perico</small></div><div class="stat-item"><div class="stat">2</div><small>Rivera aux commandes</small></div></div>
+  </div>
+
+  <div class="slide split reveal">
+    <div>
+      <h3 class="h">Le rêve <span class="thin">d'Héctor</span></h3>
+      <p class="lead">Héctor, mécanicien colombien installé à Los Santos, a toujours voulu son propre garage. Il l'ouvre à Cayo Perico avec son fils, et lui donne son nom : Repair Rico. Il voulait que tout le monde sache qu'un jour, l'affaire serait à lui.</p>
+      <p class="lead">Père et fils le construisent à deux, à la sueur de leur front, et se font une place parmi les habitants de l'île. Aujourd'hui, Rico et Camila y travaillent et y vivent : leurs logements sont juste au-dessus de l'atelier.</p>
+    </div>
+    <aside class="note"><span class="ast" aria-hidden="true">✱</span><p>Le garage porte le prénom de Rico. Le nom, lui, est celui de toute la famille Rivera.</p></aside>
+  </div>
+
+  <div class="block reveal">
+    <h3 class="h">Le garage <span class="thin">en trois temps</span></h3>
+    <ol class="timeline t3"><li><span class="t-age">Il y a 5 ans</span><h4>L'ouverture</h4><p>Héctor et Rico quittent Los Santos pour Cayo Perico et ouvrent Repair Rico, le garage de leurs rêves.</p></li><li><span class="t-age">Puis</span><h4>Le deuil</h4><p>Héctor décède. Rico se retrouve seul avec un garage criblé de dettes.</p></li><li><span class="t-age">Aujourd'hui</span><h4>Les deux Rivera</h4><p>Camila a tout lâché pour rejoindre son frère. Ensemble, ils tiennent le garage debout.</p></li></ol>
+  </div>
+
+  <div class="block">
+    <h3 class="h">Ce qu'on <span class="thin">y fait</span></h3>
+    <ul class="traits"><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Réparation</h4><p>Rico répare presque n'importe quoi : diagnostic à l'oreille, réparation avec trois fois rien, aucun client qui repart mécontent.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Accueil et devis</h4><p>Camila reçoit les clients, lit les gens en quelques secondes, négocie avec eux comme avec les fournisseurs.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Custom</h4><p>Le prochain chapitre : un espace dédié à la personnalisation, pour faire de Repair Rico la référence de l'île.</p></li></ul>
+  </div>
+
+  <div class="block">
+    <h3 class="h">L'île vue <span class="thin">par les Rivera</span></h3>
+    <ul class="traits"><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Rico connaît l'île</h4><p>Il connaît tout le monde à Cayo Perico, et tout le monde le connaît. Respecté pour son sérieux et son honnêteté.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Camila est la nouvelle</h4><p>Les habitués du garage ne la connaissent pas et la voient comme « la petite de la ville ».</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Ce qu'on raconte</h4><p>Trafics, gens qui disparaissent, police qui ferme les yeux. Camila a entendu ces histoires avant d'arriver.</p></li></ul>
+  </div>
+
+  <div class="block">
+    <h3 class="h">Les rituels <span class="thin">du garage</span></h3>
+    <ul class="habits"><li class="card reveal"><h4>6h</h4><p>Le rideau du garage se lève toujours à la même heure.</p></li><li class="card reveal"><h4>Deux tapes</h4><p>Sur le capot d'une voiture réparée, comme Héctor le faisait.</p></li><li class="card reveal"><h4>La musique</h4><p>Cumbia et vieille salsa pour Rico, reggaeton à fond pour Camila.</p></li><li class="card reveal"><h4>Le foot</h4><p>Les matchs se regardent au garage, avec les habitués.</p></li><li class="card reveal"><h4>Le dimanche</h4><p>Les recettes colombiennes d'Héctor, et une table pour se réconcilier.</p></li></ul>
+  </div>
+
+  <div class="block reveal">
+    <h3 class="h">Un bloc, <span class="thin">face au monde</span></h3>
+    <div class="duo two"><div class="card"><h4 class="label">Aujourd'hui</h4><p>Elle le trouve impossible avec les clients, il la trouve trop bavarde et nulle en mécanique. Ils se disputent en espagnol et se réconcilient à table.</p></div><div class="card"><h4 class="label">Face au monde</h4><p>Un bloc. Toucher à l'un, c'est s'attaquer aux deux. Elle l'appelle « Ricky » ou « hermano », il l'appelle « mija » ou « Dos ».</p></div></div>
+  </div>
+
+  <div class="block reveal" id="plan">
+    <h3 class="h">Ce qu'on <span class="thin">va jouer</span></h3>
+    <div class="duo two"><div class="card"><h4 class="label">Court terme</h4><ul class="dots"><li>Éviter la saisie et payer les fournisseurs</li><li>Remettre les comptes à flot</li><li>Recruter un apprenti fiable</li><li>Regagner la confiance des clients et les fidéliser</li><li>Faire connaître Repair Rico sur l'île</li></ul></div><div class="card"><h4 class="label">Long terme</h4><ul class="dots"><li>Racheter les murs du garage</li><li>Agrandir l'atelier</li><li>Devenir la référence de la custom sur l'île</li><li>Ouvrir un espace dédié à la personnalisation</li><li>Transmettre un jour Repair Rico, comme Héctor l'a fait</li><li>Que Repair Rico rende leur père fier</li></ul></div></div>
+  </div>
+
+  
+
+  <div class="block" id="cherche">
+    <h3 class="h">Ce que <span class="thin">le garage cherche</span></h3>
+    <ul class="traits four"><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Un apprenti ou un mécanicien</h4><p>Pour épauler Rico à l'atelier.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Des fournisseurs de pièces fiables</h4><p>Rico cherche des partenaires sérieux.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Un guide de l'île</h4><p>Quelqu'un pour faire découvrir à Camila Cayo Perico et ses codes.</p></li><li class="card reveal"><span class="ast" aria-hidden="true">✱</span><h4>Un partenaire custom</h4><p>Camila est partante pour tout projet de personnalisation, si quelqu'un d'autre fait la mécanique.</p></li></ul>
+  </div>
+
+  <div class="slide cta reveal">
+    <span class="ast big" aria-hidden="true">✱</span>
+    <h2 class="h">Un garage, <span class="thin">deux Rivera</span></h2>
+    <p class="lead">Repair Rico, Cayo Perico. Le rideau se lève à 6h.</p>
+    <p class="cta-links">
+      <a class="pill" href="#camila" data-tab="camila">Camila</a>
+      <a class="pill" href="#rico" data-tab="rico">Rico</a>
+    </p>
+  </div>
+</div>
+</section>
+</div>
+</main>
+
+<footer>Repair Rico · Cayo Perico · Dossier staff</footer>
+
+<script>
+(function(){
+  var nav=document.querySelector('.nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>24)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  var panels=[].slice.call(document.querySelectorAll('[role="tabpanel"]'));
+  var stage=document.getElementById('stage');
+  var ids=panels.map(function(p){return p.id});
+
+  function show(id){
+    if(ids.indexOf(id)<0)return false;
+    panels.forEach(function(p){p.hidden=(p.id!==id)});
+    tabs.forEach(function(t){
+      var on=t.getAttribute('data-tab')===id;
+      t.setAttribute('aria-selected',on?'true':'false');
+      t.tabIndex=on?0:-1;
+    });
+    return true;
+  }
+  function scrollToStage(){
+    window.scrollTo({top:stage.offsetTop-76,behavior:reduce?'auto':'smooth'});
+  }
+  function go(id,scroll){
+    if(!show(id))return;
+    try{history.replaceState(null,'','#'+id)}catch(err){}
+    if(scroll)scrollToStage();
+  }
+  function fromHash(scroll){
+    var h=decodeURIComponent(location.hash.replace('#',''));
+    if(!h)return show('camila');
+    if(show(h)){if(scroll)scrollToStage();return true}
+    var el=document.getElementById(h);
+    if(el){
+      var p=el.closest('[role="tabpanel"]');
+      if(p){show(p.id);if(scroll)el.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});return true}
+    }
+    return show('camila');
+  }
+
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest('a[data-tab]');
+    if(!a)return;
+    ev.preventDefault();
+    go(a.getAttribute('data-tab'),true);
+  });
+  var tablist=document.querySelector('.tabs');
+  tablist.addEventListener('keydown',function(ev){
+    var i=tabs.indexOf(document.activeElement);
+    if(i<0)return;
+    var n=null;
+    if(ev.key==='ArrowRight')n=(i+1)%tabs.length;
+    else if(ev.key==='ArrowLeft')n=(i-1+tabs.length)%tabs.length;
+    else if(ev.key==='Home')n=0;
+    else if(ev.key==='End')n=tabs.length-1;
+    if(n===null)return;
+    ev.preventDefault();
+    tabs[n].focus();
+    go(tabs[n].getAttribute('data-tab'),false);
+  });
+  window.addEventListener('hashchange',function(){fromHash(true)});
+  fromHash(!!location.hash);
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+    },{threshold:.08,rootMargin:'0px 0px -4% 0px'});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+
+  var g=document.querySelector('.cursor-glow');
+  if(g&&window.matchMedia('(pointer:fine)').matches){
+    window.addEventListener('pointermove',function(ev){
+      g.style.setProperty('--mx',ev.clientX+'px');g.style.setProperty('--my',ev.clientY+'px');
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
